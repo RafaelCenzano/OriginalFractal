@@ -11,15 +11,15 @@ public void setup(){
 public void draw(){
     background(0);
     fractal(mouseX, mouseY, 300);
+    fractal(mouseX, mouseY - 200, 150);
+    fractal(mouseX, mouseY + 200, 150);
 }
 
 public void fractal(float x, float y, float length){
-    strokeWeight(length / 40);
+    strokeWeight(length / 30);
     ellipse(x, y, length, length);
-    if(length > 100){
+    if(length > 50){
         fractal(x + (length / 2), y, length * 0.66666);
         fractal(x - (length / 2), y, length * 0.66666);
-        fractal(x, y - (length / 2), length * 0.66666);
-        fractal(x, y + (length / 2), length * 0.66666);
     }
 }
